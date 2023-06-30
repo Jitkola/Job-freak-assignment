@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Freak</title>
+  <style>
+    
+    .navigation {
+      float: left;
+      width: 20%;
+      background-color: #f1f1f1;
+      padding: 20px;
+      height: 100vh;
+      overflow: auto;
+    }
+    .navigation ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .navigation ul li {
+      margin-bottom: 10px;
+    }
+    .navigation ul li a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      background-color: #eaeaea;
+      transition: background-color 3s ease;
+    }
+    .navigation ul li a:hover {
+
+background: #E89EE8;
+background: linear-gradient(135deg, #E89EE8, #AE1F3C);
+    }
+    .content {
+      margin-left: 20%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      min-height: calc(100vh - 40px); 
+      background: #E89EE8;
+      background: linear-gradient(135deg, #E89EE8, #AE1F3C);
+      color: #000000;
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .content-item {
+      display: none;
+    }
+    .content-item.active {
+      display: block;
+    }
+    .contact-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .contact-form input[type="text"],
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .contact-form textarea {
+      height: 100px;
+    }
+    .contact-form input[type="submit"] {
+      background-color: #53b4e4;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    
+    function showContent(contentId) {
+      var contentElements = document.getElementsByClassName("content-item");
+      for (var i = 0; i < contentElements.length; i++) {
+        contentElements[i].classList.remove("active");
+      }
+      document.getElementById(contentId).classList.add("active");
+    }
+  </script>
+</head>
+<body>
+  <div class="navigation">
+    <ul>
+      <li><a href="#" onclick="showContent('home-content')">Home</a></li>
+      <li><a href="#" onclick="showContent('contact-content')">Contact</a></li>
+      <li><a href="#" onclick="showContent('information-content')">Information</a></li>
+      <li><a href="#" onclick="showContent('guide-content')">Guide</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div id="home-content" class="content-item active">
+      <h1>Home</h1>
+      <p>This page will show the content of Home.</p>
+    </div>
+    <div id="contact-content" class="content-item">
+      <h1>Contact</h1>
+      <div class="contact-form">
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <div id="information-content" class="content-item">
+      <h1>Information</h1>
+      <p>This page will show the content of the Information section.</p>
+    </div>
+    <div id="guide-content" class="content-item">
+      <h1>Guide</h1>
+      <p>This page will show the content of Guide.</p>
+    </div>
+  </div>
+</body>
+</html>
